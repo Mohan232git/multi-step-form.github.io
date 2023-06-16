@@ -39,12 +39,13 @@ body{
 }
 
 .container {
-    min-width:80% ;
+    min-width:70% ;
     height:600px;
     background-color: var(--White);
     display: grid;
     grid-template-columns: 2fr 5fr ;
-    gap: 20%;
+    gap: 10%;
+    border-radius: 15px;
 }
 
 .Sidebar {
@@ -53,15 +54,13 @@ body{
     background-image: url(images/bg-sidebar-desktop.svg);
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 5px;
+    border-radius: 10px;
     
 }
 
-.steps {
+ .steps {
     padding: 1em 1.5em;
-    margin-left: 50px;
-
-
+   
 }
 
 .steps span {
@@ -74,6 +73,97 @@ body{
     color: var(--White);
     font-weight: var(--b500);
 }
-.step-1 {
+
+#step-number {
+    color: var(--White);
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 2px solid var(--Lightblue);
+    font-weight: var(--b500);
+    padding-top: 5px;
+    border-radius: 50%;
+   
+}
+
+.step-1-cont,
+.step-2-cont,
+.step-3-cont,
+.step-4-cont {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Active state */
+/* 
+background-color: var(--Lightblue);
+color: var(--Marineblue); */
+
+
+.your-info{
+    margin: 60px 60px;
+   width: 550px;
+    margin-left: 0;
+    position: relative;
+}
+
+.your-info h2{
+    color: var(--Marineblue);
+    font-size: 2em;
+}
+
+.your-info p{
+    margin-top: 10px;
+    color: var(--Coolgray);
+    font-size: 1em;
+}
+
+.form {
+    margin: 30px 0;
+}
+
+.input-info .text-info {
+    margin: 30px 0;
+}
+
+.input-info .text-info label {
+    display: block;
+    color: var(--Marineblue);
+    font-weight: var(--b500);
+}
+
+.input-info .text-info input {
+    padding: 15px 30px;
+    font-size:18px ;
+    color: var(--Marineblue);
+    width: 550px;
+    font-weight: var(--b700);
+    border-radius: 10px;
+    border: 2px solid;
+    border-color:var(--Lightgray);
+    outline: none;
+}
+.input-info .text-info input:focus{
+    border-color:var(--Marineblue) ;
+}
+
+
+.input-info .text-info input::placeholder{
+    font-weight: var(--b500);
+}
+
+.your-info .btn {
+    display: inline-block;
+    padding: 10px 40px;
     margin-top: 30px;
+    position: absolute;
+    right: 0;
+    color: var(--Alabaster);
+    font-weight: var(--b500);
+    font-family: inherit;
+    border: none;
+    background-color: var(--Marineblue);
+    border-radius: 5px;
 }
