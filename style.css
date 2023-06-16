@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --Marineblue: hsl(213, 96%, 18%);
+    --Purplishblue: hsl(243, 100%, 62%) ;
+    --Pastelblue: hsl(228, 100%, 84%) ;
+    --Lightblue: hsl(206, 94%, 87%) ;
+    --Strawberryred: hsl(354, 84%, 57%) ;
+
+   /*   Neutral */
+
+    --Coolgray: hsl(231, 11%, 63%);
+    --Lightgray: hsl(229, 24%, 87%);
+    --Magnolia: hsl(217, 100%, 97%);
+    --Alabaster: hsl(231, 100%, 99%);
+    --White: hsl(0, 0%, 100%) ;
+
+
+    --primaryFont: 'Ubuntu';
+    --b400:400;
+    --b500:500;
+    --b700:700;
+}
+
+
+body{
+    font-family:var(--primaryFont);
+    font-size: 16px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Magnolia);
+}
+
+.container {
+    min-width:80% ;
+    height:600px;
+    background-color: var(--White);
+    display: grid;
+    grid-template-columns: 2fr 5fr ;
+    gap: 20%;
+}
+
+.Sidebar {
+    margin:1rem;
+    background-color: var(--Alabaster);
+    background-image: url(images/bg-sidebar-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    
+}
+
+.steps {
+    padding: 1em 1.5em;
+    margin-left: 50px;
+
+
+}
+
+.steps span {
+    font-size: .8em;
+    color: var(--Coolgray);
+    font-weight: var(--b400);
+}
+
+.steps p {
+    color: var(--White);
+    font-weight: var(--b500);
+}
+.step-1 {
+    margin-top: 30px;
+}
