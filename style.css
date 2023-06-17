@@ -96,10 +96,28 @@ body{
     gap: 15px;
 }
 
+
+/* overflow pages */
+
+
+
+
+.right-content {
+    width: 80%;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.page-2{
+    position: absolute;
+    right: 0;
+}
+
 /* Active state */
-/* 
-background-color: var(--Lightblue);
-color: var(--Marineblue); */
+
+
+
 
 
 .your-info{
@@ -109,12 +127,12 @@ color: var(--Marineblue); */
     position: relative;
 }
 
-.your-info h2{
+.heading h2{
     color: var(--Marineblue);
     font-size: 2em;
 }
 
-.your-info p{
+.heading p{
     margin-top: 10px;
     color: var(--Coolgray);
     font-size: 1em;
