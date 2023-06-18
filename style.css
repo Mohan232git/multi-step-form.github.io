@@ -97,24 +97,6 @@ body{
 }
 
 
-/* overflow pages */
-
-
-
-
-.right-content {
-    width: 80%;
-    display: flex;
-    overflow: hidden;
-    position: relative;
-}
-
-.page-2{
-    position: absolute;
-    right: 0;
-}
-
-/* Active state */
 
 
 
@@ -122,7 +104,7 @@ body{
 
 .your-info{
     margin: 60px 60px;
-   width: 550px;
+     width: 550px;
     margin-left: 0;
     position: relative;
 }
@@ -185,3 +167,149 @@ body{
     background-color: var(--Marineblue);
     border-radius: 5px;
 }
+
+
+
+/* page-2 */
+
+.your-info {
+    display: none;
+}
+
+.right-content {
+    position: relative;
+}
+
+
+.page-2{
+    position: absolute;
+    top:60px;
+    width: 550px;
+ 
+}
+
+
+.grid-page-2 {
+    margin:30px 0px ;
+  display: flex;
+  gap: 30px;
+
+}
+
+.items {
+    width: 40%;
+    
+    border: 2px solid var(--Lightgray);
+    border-radius: 10px;
+    padding: 20px;
+
+}
+
+.items img {
+    margin-bottom: 30px;
+}
+
+.items h4 {
+    color: var(--Marineblue);
+    margin: 5px 0px;
+}
+.items p {
+    color: var(--Coolgray);
+    font-size: .9em;
+    font-weight: var(--b500);
+
+}
+
+.items:hover {
+    border-color:var(--Marineblue) ;
+    background-color: var(--Alabaster);
+}
+
+.plan-btn {
+    width: 100%;
+    background-color: var(--Alabaster);
+    height: 60px;
+    padding: 20px 0;
+    margin:40px  0px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plan-btn p {
+    color: var(--Marineblue);
+    font-size: 16px;
+    font-weight:var(--b500);
+    margin: 0px 10px;
+}
+
+.plan-btn label {
+    width: 50px;
+    height: 25px;
+    margin: 0px 20px;
+    background-color: var(--Marineblue);
+    border-radius:50px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.plan-btn label::before{
+    content: "";
+    position: absolute;
+    width:15px;
+    height: 15px;
+    background-color: var(--White);
+    border-radius: 50%;
+    margin: 5px;
+    transition:0.1s;
+}
+
+#check {
+   opacity:0;
+   width: 0;
+}
+
+
+
+input:checked + .plan-btn p {
+    color: var(--Alabaster);
+}
+
+#check:checked + .button::before {
+    transform: translateX(25px);
+}
+
+.page-2-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 70px 0px;
+}
+
+.page-2-buttons .prevbtn {
+    
+    font-size: 19px;
+    border: none;
+    background-color: transparent;
+    color: var(--Marineblue);
+    font-weight:var(--b700);
+}
+
+
+.page-2-buttons .nextbtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: var(--White);
+    background-color: var(--Marineblue);
+    border: none;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+/* Active state */
