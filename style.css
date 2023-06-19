@@ -178,6 +178,8 @@ body{
 
 .right-content {
     position: relative;
+    width: 550px;
+    /* overflow:hidden; */
 }
 
 
@@ -305,11 +307,103 @@ input:checked + .plan-btn p {
     border-radius: 10px;
 }
 
+.items span {
+    margin: 3px 0px;
+    font-size:.9em;
+    font-weight: var(--b500)
+}
+
+
+.page-2 {
+
+    display:none ;
+  /*   left: -650px;
+*/
+}
 
 
 
+/* page-3 */
+
+.page-3{
+    margin: 30px 0px;
+
+}
+
+.page-3 .features {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.page-3 .features .features-items {
+    display: flex;
+    align-items: center
+}
+
+.features {
+    margin-top: 25px;
+    border: 2px solid var(--Lightgray);
+    padding: 15px 25px;
+    border-radius: 10px;
+}
+
+.features span {
+    margin:5px 0;
+    color: var(--Pastelblue);
+    font-size:.9em;
+    font-weight: var(--b700);
+}
+
+.features-items input {
+    width: 15px;
+    font-size: 10px;
+}
+.features-items input:checked + .features {
+    background-color: var(--Pastelblue);
+}
 
 
+.tag {
+    margin-left: 25px;
+}
 
+.tag h3 {
 
-/* Active state */
+    color: var(--Marineblue);
+
+}
+.tag p {
+    color: var(--Coolgray);
+    line-height:1.5;
+}
+.section {
+    margin-bottom: 20px;
+}
+.page-3-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px ;
+}
+
+.prevbtn-3 {
+    color: var(--Coolgray);
+    border: none;
+    font-size: 18px;
+    font-weight: var(--b500);
+    background-color: transparent;
+}
+
+.prevbtn-3:hover{
+    color: var(--Marineblue);
+}
+
+.nextbtn-3 {
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: var(--White);
+    font-size: 18px;
+    font-weight:var(--b500);
+    background-color: var(--Marineblue);
+}
+
