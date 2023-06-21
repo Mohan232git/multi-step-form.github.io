@@ -74,7 +74,7 @@ body{
     font-weight: var(--b500);
 }
 
-#step-number {
+ #step-number {
     color: var(--White);
     background-color: transparent;
     width: 30px;
@@ -86,7 +86,7 @@ body{
     border-radius: 50%;
    
 }
-
+ 
 .step-1-cont,
 .step-2-cont,
 .step-3-cont,
@@ -445,9 +445,7 @@ input:checked + .plan-btn p {
 }
 
 
-.page-3 {
-    
-}
+
 
 
 /* page-4 */
@@ -576,3 +574,19 @@ input:checked + .plan-btn p {
     line-height: 1.5;
 }
 
+/* for js purpose */
+
+
+.invalid::placeholder {
+        color: red;
+        font-weight: var(--b700);
+}
+
+/* #step-number {
+    background-color: var(--Lightblue);
+    color: var(--Marineblue);
+} */
+
+#step-number-1{
+    background-color:var();
+}
