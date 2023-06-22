@@ -65,16 +65,15 @@ body{
 
 .steps span {
     font-size: .8em;
-    color: var(--Coolgray);
     font-weight: var(--b400);
 }
 
 .steps p {
     color: var(--White);
-    font-weight: var(--b500);
+    font-weight: var(--b700);
 }
 
- #step-number {
+/*  #step-number {
     color: var(--White);
     background-color: transparent;
     width: 30px;
@@ -85,7 +84,7 @@ body{
     padding-top: 5px;
     border-radius: 50%;
    
-}
+} */
  
 .step-1-cont,
 .step-2-cont,
@@ -96,6 +95,29 @@ body{
     gap: 15px;
 }
 
+.count{
+    color: var(--White);
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 2px solid var(--Lightblue);
+    font-weight: var(--b500);
+    padding-top: 5px;
+    border-radius: 50%;
+    font-weight:var(--b700);
+    font-size: 0.8em;
+}
+
+.active-state {
+    background-color: var(--Lightblue);
+    color: var(--Marineblue);
+}
+
+.steps-count {
+    color: var(--Lightgray);
+    font-weight:var(--b700);
+}
 
 
 
@@ -231,7 +253,7 @@ body{
 
 .items {
     width: 40%;
-    
+    margin-right: 5px;
     border: 2px solid var(--Lightgray);
     border-radius: 10px;
     padding: 20px;
@@ -258,6 +280,11 @@ body{
     background-color: var(--Alabaster);
 }
 
+.active{
+    border-color:var(--Marineblue) ;
+    background-color: var(--Alabaster);
+}
+
 .plan-btn {
     width: 100%;
     background-color: var(--Alabaster);
@@ -271,7 +298,7 @@ body{
 }
 
 .plan-btn p {
-    color: var(--Marineblue);
+    
     font-size: 16px;
     font-weight:var(--b500);
     margin: 0px 10px;
@@ -303,6 +330,15 @@ body{
    width: 0;
 }
 
+.year {
+    color: var(--Coolgray);
+}
+
+#extra-year-info-1,
+#extra-year-info-2,
+#extra-year-info-3{
+    display: none;
+}
 
 
 input:checked + .plan-btn p {
@@ -316,7 +352,8 @@ input:checked + .plan-btn p {
 .page-2-buttons {
     display: flex;
     justify-content: space-between;
-    margin: 70px 0px;
+    margin: 90px 0px;
+    margin-bottom: 0;
 }
 
 .page-2-buttons .prevbtn {
@@ -324,18 +361,24 @@ input:checked + .plan-btn p {
     font-size: 19px;
     border: none;
     background-color: transparent;
-    color: var(--Marineblue);
+    color: var(--Coolgray);
     font-weight:var(--b700);
+}
+
+.page-2-buttons .prevbtn:hover {
+    color: var(--Marineblue);
 }
 
 
 .page-2-buttons .nextbtn {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 10px 40px;
+    /* font-size: 16px; */
     color: var(--White);
     background-color: var(--Marineblue);
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-weight: var(--b500);
 }
 
 .items span {
@@ -420,14 +463,16 @@ input:checked + .plan-btn p {
 .page-3-btns {
     display: flex;
     justify-content: space-between;
-    margin-top: 80px ;
+    margin-top: 70px ;
+    font-size: 19px;
 }
 
 .prevbtn-3 {
+
     color: var(--Coolgray);
     border: none;
-    font-size: 18px;
-    font-weight: var(--b500);
+    font-size: 19px;
+    font-weight: var(--b700);
     background-color: transparent;
 }
 
@@ -436,11 +481,12 @@ input:checked + .plan-btn p {
 }
 
 .nextbtn-3 {
-    padding: 10px 20px;
-    border-radius: 10px;
+    padding: 10px 40px;
+    border-radius: 5px;
     color: var(--White);
-    font-size: 18px;
+    /* font-size: 18px; */
     font-weight:var(--b500);
+    font-family: inherit;
     background-color: var(--Marineblue);
 }
 
@@ -533,7 +579,7 @@ input:checked + .plan-btn p {
     border: none;
     font-size:18px ;
     color: var(--Coolgray);
-    font-weight: var(--b500);
+    font-weight: var(--b700);
 }
 
 .prevbtn-4:hover{
@@ -541,13 +587,14 @@ input:checked + .plan-btn p {
 }
 
 .confirm {
-    padding: 10px 30px;
+    padding: 10px 40px;
     background-color: var(--Purplishblue);
     border: none;
-    font-size: 18px;
+    /* font-size: 18px; */
+    font-family: inherit;
     color: var(--White);
-    border-radius: 10px;
-    font-weight: 500;
+    border-radius: 5px;
+    font-weight: var(--b500);
 }
 
 /* .page-4{

@@ -25,25 +25,28 @@
     <div class="container">
           <div class="Sidebar">
             <div class="step-1-cont steps">
-              <span class="step-1" id="step-number">1</span>
+              <span class="step-1 count" id="step-number-1">1</span>
                 <div class="step-1">
-                  <span > Step 1</span>
+                  <span class="steps-count"> Step 1</span>
                   <P>Your info</P></div>
             </div>
             <div class="step-2-cont steps">
-              <span class="step-2" id="step-number">2</span>
-              <div class="step-2"><span> Step 2</span>
+              <span class="step-2 count" id="step-number-2">2</span>
+              <div class="step-2">
+                <span class="steps-count"> Step 2</span>
                 <P>Select plan</P></div>
                 
             </div>
             <div class="step-3-cont steps">
-              <span class="step-3"   id="step-number">3</span>
-              <div class="step-3"><span>Step 3</span>
+              <span class="step-3 count"   id="step-number-3">3</span>
+              <div class="step-3">
+                <span class="steps-count">Step 3</span>
                 <P>Add-ons</P></div>
             </div>
             <div class="step-4-cont steps">
-              <span class="step-4" id="step-number">4</span>
-              <div class="step-4"><span> Step 4</span>
+              <span class="step-4 count" id="step-number-4">4</span>
+              <div class="step-4">
+                <span class="steps-count"> Step 4</span>
                 <P>Summary</P></div>
                 
             </div>
@@ -61,7 +64,7 @@
            <div class="input-info">
              <div class="text-info">
                <label for="name">Name</label>
-               <input type="text" id="input-box" autocomplete="off" autofocus placeholder="e.g. Stephen King">
+               <input type="text" id="input-box" autocomplete="off"  placeholder="e.g. Stephen King">
              </div>
              <div class="text-info">
                <label for="email">Email Address</label>
@@ -89,36 +92,36 @@
             <div class="grid-page-2">
 
 
-              <div class="items">
+              <div class="items" id="items">
                 <img src="images/icon-arcade.svg" alt="">
                 <h4>Arcade</h4>
                 <p>$9/mo</p>
-                <span>2 months free</span>
+                <span id="extra-year-info-1">2 months free</span>
               </div>
 
 
-              <div class="items">
+              <div class="items" id="items">
                 <img src="images/icon-advanced.svg" alt="">
                 <h4>Advanced</h4>
                 <p>$12/mo</p>
-                <span>2 months free</span>
+                <span  id="extra-year-info-2">2 months free</span>
               </div>
 
 
-              <div class="items">
+              <div class="items" id="items">
                 <img src="images/icon-pro.svg" alt="">
                 <h4>Pro</h4>
                 <p>$15/mo</p>
-                <span>2 months free</span>
+                <span  id="extra-year-info-3">2 months free</span>
               </div>
             </div>
 
 
             <div class="plan-btn">
-              <p class="month">Monthly</p>
-              <input type="checkbox" id="check">
+              <p class="month" id="month">Monthly</p>
+              <input type="checkbox" id="check" onclick="clicked()">
               <label for="check" class="button"></label>
-              <p class="year">Yearly</p>
+              <p class="year" id="year">Yearly</p>
              <!--  <span>2 months free</span> -->
             </div>
 
@@ -207,7 +210,7 @@
              <div class="center-content">
               <div class="top">
                 <h3>Arcade</h3>
-              <a href="#">change</a>
+              <a href="#page-2">change</a>
               </div>
               <span>$9/mo</span>
              </div>
