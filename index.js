@@ -32,11 +32,17 @@ let itemlist = document.querySelectorAll("#items");
 
 itemlist[0].addEventListener("click",()=>{
    itemlist[0].classList.toggle("active");
+   itemlist[1].classList.remove("active");
+   itemlist[2].classList.remove("active");
 });
 itemlist[1].addEventListener("click",()=>{
+   itemlist[0].classList.remove("active");
    itemlist[1].classList.toggle("active");
+   itemlist[2].classList.remove("active");
 });
 itemlist[2].addEventListener("click",()=>{
+    itemlist[0].classList.remove("active");
+    itemlist[1].classList.remove("active");
     itemlist[2].classList.toggle("active");
 });
 
@@ -45,17 +51,21 @@ itemlist[2].addEventListener("click",()=>{
 
 function isempty(){
   let count = 0
+  
   for(let i=0 ; i<input.length ; i++){
      if(input[i].value===""){
-
-      input[i].placeholder ="must fill this field"
+      originalcolor = input[i].style.borderColor ;
+      input[i].placeholder ="This field must filled....!"
       input[i].classList.add("invalid");
+      input[i].style.borderColor = "red";
       count++;
 
         
      }
      else{
+      input[i].style.borderColor = originalcolor ;
        input[i].classList.remove("invalid");
+      
        
      }
   }
@@ -76,9 +86,9 @@ function isempty(){
 
 
 btn1.onclick=function(){
-   isempty();  
- /*  page1.style.left = "-600px" ;
-    page2.style.left="0px" */
+   /* isempty();   */
+  page1.style.left = "-600px" ;
+    page2.style.left="0px"
 };
 perv1.onclick= function(){
   page1.style.left="0px"
@@ -133,6 +143,15 @@ function clicked(){
   let extrainfo1 = document.getElementById("extra-year-info-1");
   let extrainfo3= document.getElementById("extra-year-info-2");
   let extrainfo2= document.getElementById("extra-year-info-3");
+  let yearplan1 = document.getElementById("year-pack-1");
+  let yearplan2 = document.getElementById("year-pack-2");
+  let yearplan3 = document.getElementById("year-pack-3");
+  /* const arcadeyearplan = "$90/yr";
+  const advanceyearplan = "$120/yr";
+  const proyearplan = "$150/yr"; */
+  const yearplan = ["$90/yr","$120/yr","$150/yr"];
+  const orignal= ["$9/mo" ,"$12/mo","$15/mo"];
+
   
   
 
@@ -143,6 +162,10 @@ if(checkbox.checked===true){
     extrainfo1.style.display="inline-block";
     extrainfo2.style.display="inline-block";
     extrainfo3.style.display="inline-block";
+    yearplan1.innerText = yearplan[0];
+    yearplan2.innerText = yearplan[1];
+    yearplan3.innerText = yearplan[2];
+
     
 }
 else{
@@ -151,13 +174,57 @@ else{
     extrainfo1.style.display="none";
     extrainfo2.style.display="none";
     extrainfo3.style.display="none";
+    yearplan1.innerText = orignal[0];
+    yearplan2.innerText = orignal[1];
+    yearplan3.innerText = orignal[2];
 }
 }
 
+let checkbox1 = document.querySelector("#checkbox-1");
+let checkbox2 = document.querySelector("#checkbox-2");
+let checkbox3 = document.querySelector("#checkbox-3");
+let features1 = document.getElementById("features-1");
+let features2 = document.getElementById("features-2");
+let features3 = document.getElementById("features-3");
 
-/* let checkbox = document.getElementById("check").checked;
 
-console.log(checkbox); */
+checkbox1.addEventListener("click",()=>{
+    
+    if(checkbox1.checked==true){
+      features1.classList.add("features-item");
+    }
+    else{
+      features1.classList.remove("features-item");
+    }
+    features3.classList.remove("features-item");
+    features2.classList.remove("features-item");
+    /* checkbox2.checked=false */
+   checkbox3.checked=false
+});
+checkbox2.addEventListener("click",()=>{
 
-
+  if(checkbox2.checked==true){
+    features2.classList.add("features-item");
+  }
+  else{
+    features2.classList.remove("features-item");
+  }
+   features1.classList.remove("features-item");
+   
+   features3.classList.remove("features-item");
+   checkbox1.checked=false
+   checkbox3.checked=false
+});
+checkbox3.addEventListener("click",()=>{
+  features1.classList.remove("features-item");
+  features2.classList.remove("features-item");
+if(checkbox3.checked==true){
+  features3.classList.add("features-item");
+}
+else{
+  features3.classList.remove("features-item");
+}
+  checkbox1.checked=false
+   checkbox2.checked=false
+})
 
