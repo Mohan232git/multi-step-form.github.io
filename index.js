@@ -34,17 +34,23 @@ itemlist[0].addEventListener("click",()=>{
    itemlist[0].classList.toggle("active");
    itemlist[1].classList.remove("active");
    itemlist[2].classList.remove("active");
+   call();
 });
 itemlist[1].addEventListener("click",()=>{
    itemlist[0].classList.remove("active");
    itemlist[1].classList.toggle("active");
    itemlist[2].classList.remove("active");
+   call();
 });
 itemlist[2].addEventListener("click",()=>{
     itemlist[0].classList.remove("active");
     itemlist[1].classList.remove("active");
     itemlist[2].classList.toggle("active");
+    call();
+    
 });
+
+
 
 
 
@@ -79,6 +85,22 @@ function isempty(){
 }
 
 
+function empty(){
+   let divactive = document.querySelector(".active");
+   let divs=document.querySelectorAll("#items");
+   let originalborder = "var(--Lightgray)";
+   let activeborder = "var(--Marineblue)"
+   
+    if(divactive==null){
+      alert("must select your plan");
+    }
+    else{
+      page2.style.left="-600px";
+      page3.style.left="0px";
+       
+    }
+}
+
 
 
 
@@ -98,8 +120,11 @@ perv1.onclick= function(){
    
 };
 nbtn2.onclick= function(){
-   page2.style.left="-600px";
-   page3.style.left="0px";
+
+  empty();
+   
+
+   
    step3.classList.toggle("active-state");
    step2.classList.toggle("active-state");
 };
@@ -146,6 +171,10 @@ function clicked(){
   let yearplan1 = document.getElementById("year-pack-1");
   let yearplan2 = document.getElementById("year-pack-2");
   let yearplan3 = document.getElementById("year-pack-3");
+  let planchange1=document.querySelector("#plan-change-1");
+  let planchange2=document.querySelector("#plan-change-2");
+  let planchange3=document.querySelector("#plan-change-3");
+  
   /* const arcadeyearplan = "$90/yr";
   const advanceyearplan = "$120/yr";
   const proyearplan = "$150/yr"; */
@@ -165,6 +194,9 @@ if(checkbox.checked===true){
     yearplan1.innerText = yearplan[0];
     yearplan2.innerText = yearplan[1];
     yearplan3.innerText = yearplan[2];
+    planchange1.innerText=yearplan[0];
+    planchange2.innerText=yearplan[1];
+    planchange3.innerText=yearplan[2];
 
     
 }
@@ -189,42 +221,101 @@ let features3 = document.getElementById("features-3");
 
 
 checkbox1.addEventListener("click",()=>{
+     if(checkbox1.checked==true && checkbox3.checked==true){
+    checkbox2.checked=false;
+    features2.classList.remove("features-item");
+    features1.classList.add("features-item"); 
+   }
+
+   else  if(checkbox1.checked==true && checkbox2.checked==true){  
+        
+       checkbox3.checked=false;
+       features3.classList.remove("features-item");
+       features1.classList.add("features-item"); 
+
+      }
     
-    if(checkbox1.checked==true){
-      features1.classList.add("features-item");
-    }
+    
+  else if(checkbox1.checked==true){
+    features1.classList.add("features-item");
+  }
+
+   
     else{
       features1.classList.remove("features-item");
     }
-    features3.classList.remove("features-item");
-    features2.classList.remove("features-item");
-    /* checkbox2.checked=false */
-   checkbox3.checked=false
-});
-checkbox2.addEventListener("click",()=>{
+    featureCall();
+        
+   /*  features1.classList.add("features-item");  */
+      });
 
-  if(checkbox2.checked==true){
+
+checkbox2.addEventListener("click",()=>{
+  
+  if(checkbox2.checked==true && checkbox1.checked==true){
+     checkbox3.checked=false;
+     features3.classList.remove("features-item");
+     features2.classList.add("features-item"); 
+  }
+  else if(checkbox2.checked==true && checkbox3.checked==true){
+     checkbox1.checked=false;
+     features1.classList.remove("features-item");
+     features2.classList.add("features-item"); 
+  }
+  else if(checkbox2.checked==true){
     features2.classList.add("features-item");
   }
   else{
     features2.classList.remove("features-item");
-  }
-   features1.classList.remove("features-item");
-   
-   features3.classList.remove("features-item");
-   checkbox1.checked=false
-   checkbox3.checked=false
-});
+  } 
+  /* features2.classList.add("features-item"); */
+  featureCall();
+}
+);
 checkbox3.addEventListener("click",()=>{
-  features1.classList.remove("features-item");
-  features2.classList.remove("features-item");
-if(checkbox3.checked==true){
-  features3.classList.add("features-item");
+  
+ 
+
+   if(checkbox3.checked==true && checkbox2.checked==true){
+      checkbox1.checked=false;
+      features1.classList.remove("features-item");
+      features3.classList.add("features-item"); 
+  } 
+  else if(checkbox3.checked==true && checkbox1.checked==true){
+      checkbox2.checked=false;
+      features2.classList.remove("features-item");
+      features3.classList.add("features-item"); 
+  }
+  else if(checkbox3.checked==true){
+    features3.classList.add("features-item");
+  }
+  
+  else{
+    features3.classList.remove("features-item");
+  } ;
+
+  featureCall();
+ /*  features3.classList.add("features-item"); */
 }
-else{
-  features3.classList.remove("features-item");
+);
+
+function call(){
+  let headinghtml = document.querySelector(".active").querySelector("#heading");
+  let planinfo = document.querySelector(".active").querySelector(".plan-info");
+  let endplaninfo = document.querySelector("#total-plan");
+  let page4heading = document.querySelector("#page-4-heading");
+  console.log(endplaninfo);
+  const originalplaninfo = planinfo.innerText;
+  let originalheading = headinghtml.innerText;
+  console.log(originalheading);
+  console.log(originalplaninfo);
+  endplaninfo.innerText=originalplaninfo;
+  page4heading.innerText=originalheading;
 }
-  checkbox1.checked=false
-   checkbox2.checked=false
-})
+
+function featureCall(){
+    console.log(document.querySelectorAll(".features-item"));
+    const features = document.querySelectorAll(".features-item");
+    
+}
 
