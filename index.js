@@ -89,7 +89,7 @@ function empty(){
    let divactive = document.querySelector(".active");
    let divs=document.querySelectorAll("#items");
    let originalborder = "var(--Lightgray)";
-   let activeborder = "var(--Marineblue)"
+   let activeborder = "var(--Marineblue)";
    
     if(divactive==null){
       alert("must select your plan");
@@ -97,6 +97,8 @@ function empty(){
     else{
       page2.style.left="-600px";
       page3.style.left="0px";
+      step3.classList.toggle("active-state");
+      step2.classList.toggle("active-state");
        
     }
 }
@@ -121,12 +123,7 @@ perv1.onclick= function(){
 };
 nbtn2.onclick= function(){
 
-  empty();
-   
-
-   
-   step3.classList.toggle("active-state");
-   step2.classList.toggle("active-state");
+  empty();   
 };
 
 nbtn3.onclick = function(){
@@ -180,8 +177,9 @@ function clicked(){
   const proyearplan = "$150/yr"; */
   const yearplan = ["$90/yr","$120/yr","$150/yr"];
   const orignal= ["$9/mo" ,"$12/mo","$15/mo"];
-
   
+  const originalplan =[ "$1/mo" , "$2/mo","$2/mo" ];
+  console.log(planchange1,planchange2,planchange3);
   
 
 if(checkbox.checked===true){
@@ -197,7 +195,7 @@ if(checkbox.checked===true){
     planchange1.innerText=yearplan[0];
     planchange2.innerText=yearplan[1];
     planchange3.innerText=yearplan[2];
-
+    
     
 }
 else{
@@ -209,7 +207,13 @@ else{
     yearplan1.innerText = orignal[0];
     yearplan2.innerText = orignal[1];
     yearplan3.innerText = orignal[2];
+    planchange1.innerText=originalplan[0];
+    planchange2.innerText=originalplan[1];
+    planchange3.innerText=originalplan[2];
+    
+
 }
+
 }
 
 let checkbox1 = document.querySelector("#checkbox-1");
@@ -304,18 +308,37 @@ function call(){
   let planinfo = document.querySelector(".active").querySelector(".plan-info");
   let endplaninfo = document.querySelector("#total-plan");
   let page4heading = document.querySelector("#page-4-heading");
-  console.log(endplaninfo);
+  /* console.log(endplaninfo); */
   const originalplaninfo = planinfo.innerText;
   let originalheading = headinghtml.innerText;
-  console.log(originalheading);
-  console.log(originalplaninfo);
+  /* console.log(originalheading);
+  console.log(originalplaninfo); */
   endplaninfo.innerText=originalplaninfo;
   page4heading.innerText=originalheading;
 }
 
 function featureCall(){
-    console.log(document.querySelectorAll(".features-item"));
     const features = document.querySelectorAll(".features-item");
+
+    if(features.length >1) {
+        let subheading= features[0].querySelector("#sub-heading");
+        let subheading1= features[1].querySelector("#sub-heading");
+        let featureplan1 = features[0].querySelector(".plan-change");
+        let featureplan2 = features[1].querySelector(".plan-change");
+        let page4subHeading = document.querySelector("#sub-heading-1");
+        let page4subHeading1 = document.querySelector("#sub-heading-2");
+        let page4subinfo1 =document.querySelector("#sub-heading-1-info");
+        let page4subinfo2 =document.querySelector("#sub-heading-2-info");
+        
+        
+        page4subHeading.innerText = subheading.innerText;
+        page4subHeading1.innerText = subheading1.innerText;
+        page4subinfo1.innerText = featureplan1.innerText;
+        page4subinfo2.innerText = featureplan2.innerText;
+
+        
+    }
+    
     
 }
 
