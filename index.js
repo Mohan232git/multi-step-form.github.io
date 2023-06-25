@@ -35,6 +35,7 @@ itemlist[0].addEventListener("click",()=>{
    itemlist[1].classList.remove("active");
    itemlist[2].classList.remove("active");
    call();
+   
 });
 itemlist[1].addEventListener("click",()=>{
    itemlist[0].classList.remove("active");
@@ -57,10 +58,10 @@ itemlist[2].addEventListener("click",()=>{
 
 function isempty(){
   let count = 0
-  
+   let originalcolor
   for(let i=0 ; i<input.length ; i++){
      if(input[i].value===""){
-      originalcolor = input[i].style.borderColor ;
+       originalcolor = input[i].style.borderColor ;
       input[i].placeholder ="This field must filled....!"
       input[i].classList.add("invalid");
       input[i].style.borderColor = "red";
@@ -110,9 +111,8 @@ function empty(){
 
 
 btn1.onclick=function(){
-   /* isempty();   */
-  page1.style.left = "-600px" ;
-    page2.style.left="0px"
+   isempty();  
+  
 };
 perv1.onclick= function(){
   page1.style.left="0px"
@@ -127,6 +127,7 @@ nbtn2.onclick= function(){
 };
 
 nbtn3.onclick = function(){
+   
    page3.style.left="-600px";
    page4.style.left = "0px";
    step4.classList.toggle("active-state");
@@ -171,7 +172,8 @@ function clicked(){
   let planchange1=document.querySelector("#plan-change-1");
   let planchange2=document.querySelector("#plan-change-2");
   let planchange3=document.querySelector("#plan-change-3");
-  
+  let totalplanheading=document.querySelector("#total-m-y");
+  let plantotal = document.querySelector("#plan-total");
   /* const arcadeyearplan = "$90/yr";
   const advanceyearplan = "$120/yr";
   const proyearplan = "$150/yr"; */
@@ -179,7 +181,7 @@ function clicked(){
   const orignal= ["$9/mo" ,"$12/mo","$15/mo"];
   
   const originalplan =[ "$1/mo" , "$2/mo","$2/mo" ];
-  console.log(planchange1,planchange2,planchange3);
+  
   
 
 if(checkbox.checked===true){
@@ -195,6 +197,9 @@ if(checkbox.checked===true){
     planchange1.innerText=yearplan[0];
     planchange2.innerText=yearplan[1];
     planchange3.innerText=yearplan[2];
+    totalplanheading.innerText ="Total(per year)";
+    plantotal.innerText = "$200/yr";
+    
     
     
 }
@@ -210,7 +215,8 @@ else{
     planchange1.innerText=originalplan[0];
     planchange2.innerText=originalplan[1];
     planchange3.innerText=originalplan[2];
-    
+    totalplanheading.innerText = "Total(per month)";
+    plantotal.innerText = "$20/mo";
 
 }
 
@@ -319,8 +325,8 @@ function call(){
 
 function featureCall(){
     const features = document.querySelectorAll(".features-item");
-
-    if(features.length >1) {
+    console.log(features[0])
+    if(features.length===2) {
         let subheading= features[0].querySelector("#sub-heading");
         let subheading1= features[1].querySelector("#sub-heading");
         let featureplan1 = features[0].querySelector(".plan-change");
@@ -329,16 +335,17 @@ function featureCall(){
         let page4subHeading1 = document.querySelector("#sub-heading-2");
         let page4subinfo1 =document.querySelector("#sub-heading-1-info");
         let page4subinfo2 =document.querySelector("#sub-heading-2-info");
-        
-        
         page4subHeading.innerText = subheading.innerText;
         page4subHeading1.innerText = subheading1.innerText;
         page4subinfo1.innerText = featureplan1.innerText;
         page4subinfo2.innerText = featureplan2.innerText;
-
-        
     }
-    
+    else {
+   /*    let page4subHeading1 = document.querySelector("#sub-heading-2");
+      let page4subinfo2 =document.querySelector("#sub-heading-2-info");
+      page4subinfo2.style.display="none";
+      page4subHeading1.style.display="none"; */
+    }
     
 }
 
