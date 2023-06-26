@@ -111,7 +111,7 @@ function empty(){
 
 
 btn1.onclick=function(){
-   isempty();  
+   isempty(); 
   
 };
 perv1.onclick= function(){
@@ -181,6 +181,8 @@ function clicked(){
   const orignal= ["$9/mo" ,"$12/mo","$15/mo"];
   
   const originalplan =[ "$1/mo" , "$2/mo","$2/mo" ];
+  let mainheading =document.querySelectorAll("#items")
+  console.log(mainheading)
   
   
 
