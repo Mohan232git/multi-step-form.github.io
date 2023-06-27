@@ -51,6 +51,37 @@ itemlist[2].addEventListener("click",()=>{
     
 });
 
+function emailvalidate() {
+        let emailinput = document.querySelectorAll('#input-box[type="email"]');const mailinput = emailinput[0].value;
+      const re =
+  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+      if(mailinput.match(re)){
+        console.log("vaild for email")
+      }
+      else{
+        console.log("invaild for email");
+      }
+};
+
+function phonevalidate(){
+    let phoneinput = document.querySelectorAll('#input-box[type="tel"]');
+    const inputvalue = Number(phoneinput[0].value) ;
+    let inputlength = inputvalue.toString().length;
+     if(isNaN(inputvalue)==true){
+      
+        console.log("invalid for phone");
+        
+      }
+      else {
+         if(inputlength==10){
+           console.log("valid for phone");
+         }
+         else{
+          console.log("invalid for phone");
+         }
+      }
+  }
+
 
 
 
@@ -58,7 +89,7 @@ itemlist[2].addEventListener("click",()=>{
 
 function isempty(){
   let count = 0
-   let originalcolor
+   let originalcolor ;
   for(let i=0 ; i<input.length ; i++){
      if(input[i].value===""){
        originalcolor = input[i].style.borderColor ;
@@ -72,8 +103,6 @@ function isempty(){
      else{
       input[i].style.borderColor = originalcolor ;
        input[i].classList.remove("invalid");
-      
-       
      }
   }
 
@@ -83,6 +112,8 @@ function isempty(){
     step1.classList.remove("active-state");
     step2.classList.add("active-state");
   }
+  emailvalidate();
+  phonevalidate();
 }
 
 
