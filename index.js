@@ -52,35 +52,50 @@ itemlist[2].addEventListener("click",()=>{
 });
 
 function emailvalidate() {
-        let emailinput = document.querySelectorAll('#input-box[type="email"]');const mailinput = emailinput[0].value;
-      const re =
-  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-      if(mailinput.match(re)){
-        console.log("vaild for email")
+        let emailinput = document.querySelectorAll('#input-box[type="email"]');
+        let mailinput = emailinput[0].value;
+        let orgiinalplacholder = emailinput[0].placeholder;
+        let page1=document.getElementById("page-1");
+      let page2=document.getElementById("page-2");
+        const tempplaceholer = orgiinalplacholder ;
+            const re =
+        /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        let phoneinput = document.querySelectorAll('#input-box[type="tel"]');
+          const phoneoriginal = phoneinput[0].placeholder;
+          const inputvalue = Number(phoneinput[0].value) ;
+          let inputlength = inputvalue.toString().length;
+      if(isNaN(inputvalue)==false && mailinput.match(re)){
+            
+        
+             page1.style.left = "-600px" ;
+              page2.style.left="0px";
+            step1.classList.remove("active-state");
+            step2.classList.add("active-state");
+            emailinput[0].classList.remove("invalid");
+            phoneinput[0].classList.remove("invalid");
+            emailinput[0].placeholder = orgiinalplacholder;
+            phoneinput[0].placeholder = phoneoriginal;
+          return
       }
-      else{
-        console.log("invaild for email");
+    else {
+      if(!mailinput.match(re)){
+        console.log("false");
+          emailinput[0].value =""
+        emailinput[0].placeholder="Invalid email";
+        emailinput[0].classList.add("invalid");
       }
+      if(inputlength!=10){
+        console.log("false");
+        phoneinput[0].value ="";
+        phoneinput[0].placeholder ="Invalid number";
+        phoneinput[0].classList.add("invalid");
+      } 
+      
+     
+      }
+     
 };
 
-function phonevalidate(){
-    let phoneinput = document.querySelectorAll('#input-box[type="tel"]');
-    const inputvalue = Number(phoneinput[0].value) ;
-    let inputlength = inputvalue.toString().length;
-     if(isNaN(inputvalue)==true){
-      
-        console.log("invalid for phone");
-        
-      }
-      else {
-         if(inputlength==10){
-           console.log("valid for phone");
-         }
-         else{
-          console.log("invalid for phone");
-         }
-      }
-  }
 
 
 
@@ -107,13 +122,9 @@ function isempty(){
   }
 
   if(count===0){
-    page1.style.left = "-600px" ;
-    page2.style.left="0px"
-    step1.classList.remove("active-state");
-    step2.classList.add("active-state");
+    emailvalidate(); 
   }
-  emailvalidate();
-  phonevalidate();
+  
 }
 
 
