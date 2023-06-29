@@ -57,6 +57,7 @@ function emailvalidate() {
         let orgiinalplacholder = emailinput[0].placeholder;
         let page1=document.getElementById("page-1");
       let page2=document.getElementById("page-2");
+      let borderColor = "var(--Lightgray)";
         const tempplaceholer = orgiinalplacholder ;
             const re =
         /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -75,7 +76,8 @@ function emailvalidate() {
             phoneinput[0].classList.remove("invalid");
             emailinput[0].placeholder = orgiinalplacholder;
             phoneinput[0].placeholder = phoneoriginal;
-          return
+            emailinput[0].style.borderColor = borderColor ;
+            phoneinput[0].style.borderColor= borderColor ;
       }
     else {
       if(!mailinput.match(re)){
@@ -83,12 +85,14 @@ function emailvalidate() {
           emailinput[0].value =""
         emailinput[0].placeholder="Invalid email";
         emailinput[0].classList.add("invalid");
+        emailinput[0].style.borderColor = "red";
       }
       if(inputlength!=10){
-        console.log("false");
+        
         phoneinput[0].value ="";
         phoneinput[0].placeholder ="Invalid number";
         phoneinput[0].classList.add("invalid");
+        phoneinput[0].style.borderColor= "red";
       } 
       
      
@@ -104,10 +108,9 @@ function emailvalidate() {
 
 function isempty(){
   let count = 0
-   let originalcolor ;
+   let originalcolor="var(--Lightgray)";
   for(let i=0 ; i<input.length ; i++){
      if(input[i].value===""){
-       originalcolor = input[i].style.borderColor ;
       input[i].placeholder ="This field must filled....!"
       input[i].classList.add("invalid");
       input[i].style.borderColor = "red";
@@ -117,7 +120,8 @@ function isempty(){
      }
      else{
       input[i].style.borderColor = originalcolor ;
-       input[i].classList.remove("invalid");
+      input[i].classList.remove("invalid");
+       
      }
   }
 
@@ -164,12 +168,10 @@ perv1.onclick= function(){
    
 };
 nbtn2.onclick= function(){
-
   empty();   
 };
 
 nbtn3.onclick = function(){
-   
    page3.style.left="-600px";
    page4.style.left = "0px";
    step4.classList.toggle("active-state");
@@ -216,15 +218,12 @@ function clicked(){
   let planchange3=document.querySelector("#plan-change-3");
   let totalplanheading=document.querySelector("#total-m-y");
   let plantotal = document.querySelector("#plan-total");
-  /* const arcadeyearplan = "$90/yr";
-  const advanceyearplan = "$120/yr";
-  const proyearplan = "$150/yr"; */
+  
   const yearplan = ["$90/yr","$120/yr","$150/yr"];
   const orignal= ["$9/mo" ,"$12/mo","$15/mo"];
-  
   const originalplan =[ "$1/mo" , "$2/mo","$2/mo" ];
   let mainheading =document.querySelectorAll("#items")
-  console.log(mainheading)
+  let page4plan = document.querySelector("#page-4-heading"); 
   
   
 
@@ -243,6 +242,16 @@ if(checkbox.checked===true){
     planchange3.innerText=yearplan[2];
     totalplanheading.innerText ="Total(per year)";
     plantotal.innerText = "$200/yr";
+  let headinghtml = document.querySelector(".active").querySelector("#heading");
+  let planinfo = document.querySelector(".active").querySelector(".plan-info");
+  let endplaninfo = document.querySelector("#total-plan");
+  let page4heading = document.querySelector("#page-4-heading");
+ 
+  const originalplaninfo = planinfo.innerText;
+  let originalheading = headinghtml.innerText;
+ 
+  endplaninfo.innerText=originalplaninfo;
+  page4heading.innerText=originalheading;
     
     
     
@@ -261,6 +270,16 @@ else{
     planchange3.innerText=originalplan[2];
     totalplanheading.innerText = "Total(per month)";
     plantotal.innerText = "$20/mo";
+    let headinghtml = document.querySelector(".active").querySelector("#heading");
+  let planinfo = document.querySelector(".active").querySelector(".plan-info");
+  let endplaninfo = document.querySelector("#total-plan");
+  let page4heading = document.querySelector("#page-4-heading");
+  
+  const originalplaninfo = planinfo.innerText;
+  let originalheading = headinghtml.innerText;
+  
+  endplaninfo.innerText=originalplaninfo;
+  page4heading.innerText=originalheading;
 
 }
 
@@ -369,7 +388,7 @@ function call(){
 
 function featureCall(){
     const features = document.querySelectorAll(".features-item");
-    console.log(features[0])
+    console.log(features);
     if(features.length===2) {
         let subheading= features[0].querySelector("#sub-heading");
         let subheading1= features[1].querySelector("#sub-heading");
@@ -385,7 +404,7 @@ function featureCall(){
         page4subinfo2.innerText = featureplan2.innerText;
     }
     else {
-   /*    let page4subHeading1 = document.querySelector("#sub-heading-2");
+   /* let page4subHeading1 = document.querySelector("#sub-heading-2");
       let page4subinfo2 =document.querySelector("#sub-heading-2-info");
       page4subinfo2.style.display="none";
       page4subHeading1.style.display="none"; */
