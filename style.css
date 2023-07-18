@@ -126,7 +126,8 @@ body{
 
 .your-info{
     margin: 60px 60px;
-     width: 550px;
+     /* width: 550px; */
+     width: 100%;
     margin-left: 0;
     position: relative;
 }
@@ -144,6 +145,7 @@ body{
 
 .form {
     margin: 30px 0;
+    width: 80%;
 }
 
 .input-info .text-info {
@@ -160,7 +162,8 @@ body{
     padding: 15px 30px;
     font-size:18px ;
     color: var(--Marineblue);
-    width: 550px;
+    /* width: 550px; */
+    width: 100%;
     font-weight: var(--b700);
     border-radius: 10px;
     border: 2px solid;
@@ -177,11 +180,13 @@ body{
 }
 
 .your-info .btn {
-    display: inline-block;
+    display:block;
     padding: 10px 40px;
     margin-top: 30px;
-    position: absolute;
-    right: 0;
+    /* position: absolute;
+    right: 20%; */
+    width: fit-content;
+    margin-left:auto ;
     color: var(--Alabaster);
     font-weight: var(--b500);
     font-family: inherit;
@@ -192,7 +197,8 @@ body{
 
 .right-content {
     position: relative;
-    width: 550px;
+    /* width: 550px; */
+    width: 100%;
     overflow:hidden;
     transition: 0.5s;
 }
@@ -216,31 +222,32 @@ body{
 .page-2{
     position: absolute;
     top:60px;
-    width: 550px;
+    /* width: 550px; */
+    width: 80%;
     /* transition: 0.5s; */
    
  
 }
 .page-2 {
-    right: -700px;
+    right: -800px;
 }
 .page-3{
     position: absolute;
     top: 30px;
-    width: 100%;
-    right:-1200px ;
+    width: 80%;
+    right:-800px ;
     /* transition: 0.6s; */
 }
 .page-4{
     position: absolute;
     top: 60px;
-    right: -1900px;
+    right: -800px;
     /* transition: 0.5s; */
 }
 .thank-you{
     position: absolute;
     top: 0;
-    right: -600px;
+    right: -800px;
    /*  transition: 0.8s; */
 }
 
@@ -500,7 +507,7 @@ input:checked + .plan-btn p {
 /* page-4 */
 
 .page-4{
-    width: 100%;
+    width: 80%;
 }
 
 .change{
@@ -608,7 +615,7 @@ input:checked + .plan-btn p {
 
 .thank-you{
     width: 100%;
-    margin: 200px 0;
+    margin: 150px 0;
     text-align: center;
 }
 
@@ -642,3 +649,87 @@ input:checked + .plan-btn p {
 #step-number-1{
     background-color:var();
 }
+
+
+
+@media(max-width:500px) {
+    body {
+        display: block;
+        position: relative;
+        min-height: 100vh;
+    }
+     .container {
+        display: block;
+        background-color: var(--Magnolia);
+     }
+     .Sidebar {
+        background-image: url(images/bg-sidebar-mobile.svg);
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 100px;
+     }
+     .steps > div {
+        display: none ;
+     }
+
+     .steps {
+        padding:1em;
+     }
+     .step-1-cont , .step-2-cont ,.step-3-cont ,.step-4-cont {
+        display: inline-block;
+        text-align: center;
+        /* margin: 100px auto; */
+     }
+     .steps > span {
+        display: inline-block;
+        text-align: center;
+        
+    }
+     .sidebar-container {
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .right-content {
+        display: block;
+        position: absolute;
+        top: 10%;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: var(--White);
+        width: 90%;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+    .your-info {
+        margin: 0;
+    }
+    .form {
+        margin: 0;
+        width: 100%;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

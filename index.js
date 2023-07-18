@@ -68,7 +68,7 @@ function emailvalidate() {
       if(isNaN(inputvalue)==false && mailinput.match(re)){
             
         
-             page1.style.left = "-600px" ;
+             page1.style.left = "-800px" ;
               page2.style.left="0px";
             step1.classList.remove("active-state");
             step2.classList.add("active-state");
@@ -142,7 +142,7 @@ function empty(){
       alert("must select your plan");
     }
     else{
-      page2.style.left="-600px";
+      page2.style.left="-800px";
       page3.style.left="0px";
       step3.classList.toggle("active-state");
       step2.classList.toggle("active-state");
@@ -158,11 +158,13 @@ function empty(){
 
 btn1.onclick=function(){
    isempty(); 
+   /* page2.style.left="-800px";
+   page3.style.left="0px"; */
   
 };
 perv1.onclick= function(){
   page1.style.left="0px"
-  page2.style.left = "700px"
+  page2.style.left = "800px"
   step2.classList.toggle("active-state");
   step1.classList.toggle("active-state");
    
@@ -172,28 +174,28 @@ nbtn2.onclick= function(){
 };
 
 nbtn3.onclick = function(){
-   page3.style.left="-600px";
+   page3.style.left="-800px";
    page4.style.left = "0px";
    step4.classList.toggle("active-state");
    step3.classList.toggle("active-state");
 };
 
 perv2.onclick=function(){
-  page3.style.left="600px";
+  page3.style.left="800px";
   page2.style.left="0";
   step3.classList.toggle("active-state");
    step2.classList.toggle("active-state");
 };
 
 perv3.onclick = function(){
- page4.style.left="600px"
+ page4.style.left="800px"
   page3.style.left="0";
   step3.classList.toggle("active-state");
    step4.classList.toggle("active-state");
 };
 
 confirmbtn.onclick = function(){
-  page4.style.left="-600px"
+  page4.style.left="-800px"
   thankYoupage.style.left="0";
   step4.classList.remove("active-state");
 
