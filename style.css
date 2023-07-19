@@ -693,13 +693,14 @@ input:checked + .plan-btn p {
     .right-content {
         display: block;
         position: absolute;
-        top: 10%;
+        top: 15%;
         padding: 20px;
         border-radius: 10px;
         background-color: var(--White);
         width: 90%;
         margin-right: 5%;
         margin-left: 5%;
+        
     }
     .your-info {
         margin: 0;
@@ -709,7 +710,24 @@ input:checked + .plan-btn p {
         width: 100%;
     }
 
+    .page-2 {
+        width: 100%;
+        top: 5%;
+    }
 
+    .grid-page-2 {
+        display: block;
+    }
+    .items {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        align-items: center;
+        padding: 10px;
+    }
+    .items img {
+        margin: 0;
+    }
 }
 
 
