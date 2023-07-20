@@ -746,16 +746,18 @@ input:checked + .plan-btn p {
         margin: 0;
         padding: 10px;
         width: 100%;
+        font-size: 0.8em;
     }
     .page-3-btns {
         margin: 0;
+        margin-top: 50px;
     }
     .section {
         margin: 10px 0px;
         margin-bottom: 20px;
     }
     .features {
-        margin-top:20px ;
+        margin-top:30px ;
     }
     .page-4 {
         width: 100%;
