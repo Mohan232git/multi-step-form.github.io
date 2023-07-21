@@ -179,6 +179,10 @@ body{
     font-weight: var(--b500);
 }
 
+.buttons {
+    margin-right: 20%;
+}
+
 .your-info .btn {
     display:block;
     padding: 10px 40px;
@@ -705,6 +709,12 @@ input:checked + .plan-btn p {
     .your-info {
         margin: 0;
     }
+    .text-info input::placeholder {
+        font-size: 0.8em;
+    }
+    .buttons {
+        margin-right: 0;
+    }
     .form {
         margin: 0;
         width: 100%;
@@ -714,7 +724,7 @@ input:checked + .plan-btn p {
         width: 100%;
         top:0;
         padding: 20px;
-        font-size: 0.9em;
+        font-size: 0.8em;
 
     }
 
@@ -746,7 +756,7 @@ input:checked + .plan-btn p {
         margin: 0;
         padding: 10px;
         width: 100%;
-        font-size: 0.8em;
+        font-size: 1em;
     }
     .page-3-btns {
         margin: 0;
@@ -758,6 +768,13 @@ input:checked + .plan-btn p {
     }
     .features {
         margin-top:30px ;
+    }
+    .section {
+        font-size: 0.6em;
+
+    }
+    .features-items > input {
+        margin-left: 4px;
     }
     .page-4 {
         width: 100%;
